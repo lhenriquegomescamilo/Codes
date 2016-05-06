@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+	<head>
+		<title> Estudo sobre exception </title>
+		<meta charset="UTF-8"/>
+	</head>
+
+	<body>
+		<?php
+			function inverse($x){
+   				if(!$x):
+					throw new Exception("Divisao por zero");
+   				endif;
+
+   			return 1/$x;
+			}
+
+			try{
+				print("Numero: " . inverse(0) . "<br>");
+			}catch(Exception $error){
+				//print("Exceçao capturada: " . $error->getMessage() . "<br>");
+				displayErrorPage($error->getMessage());
+			}
+		?>
+	</body>
+
+</html>
