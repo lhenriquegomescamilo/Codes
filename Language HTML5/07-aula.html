@@ -1,0 +1,139 @@
+<!--Aula 07: Tabelas -->
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title> Aula 07 </title>
+        <meta charset="UTF-8">
+        
+        <!-- CSS para Tabela -->
+        <style>
+            th, tr, td{
+                border: 1px solid black;
+                padding: 5px;
+            }
+            
+            .nome{
+                background-color: silver;
+            }
+            
+            .telefone{
+                background-color: cornflowerblue;
+            }
+            
+            .email{
+                background-color: slategrey;
+            }
+            
+            .link{
+                background-color: red;
+            }
+            
+            .descricao{
+                background-color: silver;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        <!--Aplicando Tabelas -->
+        <h1> Trabalhando com tabelas </h1>
+        
+        <!--
+            <table> - Cria tabela
+            <tr> - Linha
+            <td> - Conteúdo 
+            <th> - Título 
+            <caption> - Legenda 
+        -->
+        
+        <table>
+            <caption><h3>Cadastro de Pessoas </h3></caption>
+            
+            <colgroup>
+                <col class="nome">
+                <col class="email">
+                <col class="telefone">
+            </colgroup>
+            
+            <thead>
+                <tr>
+                    <th> Nome: </th>
+                    <th> Email: </th>
+                    <th> Telefone: </th>
+                </tr>
+           </thead>
+            
+            <tbody>
+                <tr>
+                    <td> Maikon  </td>
+                    <td> maikon@email.com </td>
+                    <td> (60)9999-9999 </td>
+                </tr>
+                
+                <tr>
+                    <td> Maikon  </td>
+                    <td> maikon@email.com </td>
+                    <td> (60)9999-9999 </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Tabela de Links -->
+        
+        <table>
+            <caption><br/><h3>Tabela de Links</h3></caption>
+            
+            <colgroup>
+                <col class="link">
+                <col class="descricao">
+            </colgroup>
+            
+            <thead>
+                <tr>
+                    <th> Link: </th>
+                    <th> Descrição </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td><a href="01-aula.html" target="_blank">Aula 01</a></td>
+                    <td>Aula 01 - Primeira Página</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="02-aula.html" target="_blank">Aula 02</a></td>
+                    <td>Aula 02 - Títulos</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="03-aula.html" target="_blank">Aula 03</a></td>
+                    <td>Aula 01 - Listas</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="04-aula.html" target="_blank">Aula 04</a></td>
+                    <td>Aula 04 - Trabalhando com Imagens</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="05-aula.html" target="_blank">Aula 05</a></td>
+                    <td>Aula 05 - Trabalhando com Iframe</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="06-aula.html" target="_blank">Aula 06</a></td>
+                    <td>Aula 06 - Trabalhando com Links</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="07-aula.html" target="_blank">Aula 07</a></td>
+                    <td>Aula 07 - Trabalhando com Tabelas</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>    
+</html>
