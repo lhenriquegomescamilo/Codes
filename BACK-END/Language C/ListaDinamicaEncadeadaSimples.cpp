@@ -20,11 +20,26 @@ typedef struct lista{
 
 /*
 @description: Reserva um espaco de memoria
+@return: void*
+@param: void*
+*/
+void *new(int tmp){
+    return (void*)malloc(sizeof(void) * tmp);
+}
+
+/*Or:
+void *new(){
+    return (void*)malloc(sizeof(void)*1);
+}
+*/
+
+/*
+@description: Reserva um espaco de memoria
 @return: Lista
 @param: void
 */
 Lista *aloca(){
-    Lista *mem = (Lista*)malloc(sizeof(Lista)*1);
+    Lista *mem = (Lista*)new();
 
     if(mem != NULL){
         mem->info = 0;
