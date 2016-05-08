@@ -39,7 +39,7 @@ void *new(){
 @param: void
 */
 Lista *aloca(){
-    Lista *mem = (Lista*)new();
+    Lista *mem = (Lista*)new(1);
 
     if(mem != NULL){
         mem->info = 0;
