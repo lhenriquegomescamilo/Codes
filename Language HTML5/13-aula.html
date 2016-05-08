@@ -1,0 +1,92 @@
+<!-- Aula 13: Formularios -->
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title> Aula 13 </title>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Criando formularios">
+        <meta name="keywords" content="Formularios, HTML5">
+        <meta name="author" content="Maikon">
+        
+        <style>
+            tr, th{
+                padding: 4px;
+                border: 1px solid;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div>
+            <h1>Trabalhando com Formulários </h1>
+            
+             <!-- Inserindo form -->
+             <form action="pagina.php" method="POST">
+                 
+                 <!-- Integrando table com form -->
+                 <table>
+                     <thead>
+                         <h3> Usando Tabela com Input </h3>
+                         <tr>
+                             <th>Nome: <input type="text" name="name"></th>
+                             <th>Senha: <input type="password" name="password"></th>
+                             <th><input type="submit" name="btn-submit" value="Enviar"></th>
+                         </tr>
+                         
+                         <tr>
+                             <th>E-mail: <input type="email" name="email"></th>
+                             <th>Contato: <input type="text" name="telefone"></th>
+                             <th><input type="submit" name="btn-submit" value="Enviar"></th>
+                         </tr>
+                         
+                         <tr>
+                             <th> Data: <input type="date" name="date"></th>
+                             <th>Idade: <input type="number" name="idade"></th>
+                             <th><input type="submit" name="btn-submit" value="Enviar"></th>
+                         </tr>
+                         
+                     </thead>
+                 </table>
+                 
+                 <!-- Pulando algumas linhas -->
+                 <br/><br/>
+                 
+                 <!-- Form para informações pessoais -->
+                 <h3> Usando Input com FieldSet </h3>
+                 
+                 <fieldset>
+                     <legend>Informações Pessoais </legend>
+                     
+                     Nome: <input type="text" name="name">
+                     Senha: <input type="password" name="password">
+                     <input type="submit" name="btn-submit" value="Enviar">
+                 </fieldset>
+                
+                <!-- Form para informações para contato -->
+                <fieldset>
+                    <legend>Informações Contato </legend>
+                    
+                    E-mail: <input type="email" name="email">
+                    Telefone: <input type="text" name="telefone">
+                    <input type="submit" name="btn-submit" value="Enviar">
+                </fieldset>
+                
+                <!-- Informações de data -->
+                <fieldset>
+                    <legend>Informações de Data </legend>
+                    
+                    Data: <input type="date" name="date">
+                    Idade: <input type="number" name="idade">
+                    <input type="submit" name="btn-submit" value="Enviar">
+                </fieldset>
+             </form>
+            
+                
+            
+        </div>
+        
+    </body>
+</html>
