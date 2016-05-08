@@ -1,12 +1,12 @@
-<!-- Aula 15: Formulários Parte 3 - Input Types: Email, Radio, Checkbox -->
+<!-- Aula 16: Formulários Parte 4 - Input Types: Number, Range, Color -->
 
 <!DOCTYPE>
 <html lang="pt-br">
     <head>
-        <title>Aula 15 </title>
+        <title>Aula 16 </title>
         
         <meta charset="UTF-8">
-        <meta name="description" content="Aula 15: Formulários parte 3">
+        <meta name="description" content="Aula 15: Formulários parte 4">
         <meta name="keywords" content="HTML5, Form">
         <meta name="author" content="Maikon">
         <meta http-equiv="refresh" content="10">
@@ -15,7 +15,7 @@
     <body>
         
         <div>
-            <h1> Aula 15: Formulários Parte 3 </h1>
+            <h1> Aula 16: Formulários Parte 4 </h1>
             
             <!-- pagina.php não existe -->
             <form action="pagina.php" method="POST">
@@ -46,6 +46,19 @@
                         <input type="checkbox" name="checkbox" value="checkbox2"> checkbox2 
                         <input type="checkbox" name="checkbox" value="checkbox3" checked> checkbox3 <br/><br/>
                   
+                  <!-- input number, min - número minimo max - número maximo, step intervalo-->
+                  Escolha o número:
+                        <input type="number" name="numero" min="0" max="100" step="5"><br/><br/>
+                  
+                  <!-- input range -->
+                  Escolha o número: 
+                        <input type="range" name="numero" min="0" max="100" step="5"><br/><br/>
+                  
+                  <!-- input color -->
+                  Escolha sua cor: 
+                        <input type="color" name="cor"><br/><br/>
+                  
+                  <!-- Botão de enviar -->
                   <input type="submit" name="btn-submit"  value="Enviar"><br/>
                   
               </fieldset>

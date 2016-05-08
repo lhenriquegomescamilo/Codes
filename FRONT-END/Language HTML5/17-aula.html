@@ -1,0 +1,58 @@
+<!-- Aula 17: Autocomplete e Placeholder -->
+
+<!DOCTYPE>
+<html lang="pt-bt">
+    
+    <head>
+        <title> Aula 17 Autocomplete e Placeholder</title>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Aula 17 Autocomplete e Placeholder">
+        <meta name="keywords" content="HTML5, Aula 17">
+        <meta name="author" content="Maikon">
+    </head>
+    
+    <body>
+        
+        <div>
+            <h1> Informações dos Usuários </h1>
+            
+            <form action="pagina.php" method="POST">
+                <fieldset>
+                    
+                    <legend>Informações de Usuário</legend>
+                    
+                    <!-- Recebe nome com no máximo 100 caracteres e obrigatório -->
+                    Nome: <input type="text" name="nome" maxlength="100" required autofocus autocomplete="off" placeholder="Seu nome"><br/><br/>
+                    
+                    <!-- Recebe email com no máximo 100 caracters e obrigatório -->
+                    E-mail: <input type="email" name="email" maxlength="100" required autocomplete="off" placeholder="Seu email"><br/><br/>
+                    
+                    <!-- Recebe o valor da senha -->
+                    Senha: <input type="password" name="senha" maxlength="12" required autocomplete="off" placeholder="Sua senha"><br/><br/>
+                    
+                    <!-- Recebe idade -->
+                    Idade: <input type="number" name="idade" min="18" max="150" autocomplete="off" placeholder="Sua idade"><br/><br/>
+                    
+                    <!-- Recebe cor favorita -->
+                    Cor: <input type="color" name="cor" ><br/><br/>
+                    
+                    <!-- Recebe preferência de temas -->
+                    Assuntos: <input type="checkbox" name="checkbox" value="Tecnologia"> Tecnologia 
+                              <input type="checkbox" name="checkbox" value="Clima"> Clima 
+                              <input type="checkbox" name="checkbox" value="Entreterimento"> Entreterimento <br/><br/>
+                              
+                    <!-- Recebe preferência com relação ao e-mail -->
+                    Receber avisos: <input type="radio" name="radio" value="Sim"> Sim
+                                    <input type="radio" name="radio" value="Não"> Nâo <br/><br/>
+                                    
+                    <!-- Botão de enviar informações -->
+                    <input type="submit" name="btn-submit" value="Enviar">
+                    
+                </fieldset>
+            </form>
+        </div>
+        
+    </body>
+    
+</html>
