@@ -1,0 +1,44 @@
+<!-- Aula 14: Formulários Parte 2 - Required , Autofocus, Disabled -->
+
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title>Aula 14 </title>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Aula 14: Formulários parte 2">
+        <meta name="keywords" content="HTML5, Form">
+        <meta name="author" content="Maikon">
+        
+    </head>
+    
+    <body>
+        
+        <div>
+            <h1> Aula 14: Formulários Parte 2 </h1>
+            
+            <!-- pagina.php não existe -->
+            <form action="pagina.php" method="POST">
+              
+              <fieldset>
+                  <legend><h4>Informações Pessoais</h4></legend>
+                  
+                  <!-- Deixando nome obrigatorio: required -->
+                  Nome: <input type="text" name="nome" value="ValorPadrao" required>
+                  
+                  <!-- Focando o campo senha assim que carregar a pagina: autofocus -->
+                  Senha: <input type="password" name="senha" value="ValorPadrao" required autofocus>
+                  
+                  <!-- Desabilitando campo: disabled -->
+                  E-mail: <input type="email" name="email" value="valor@padrao.com" disabled>
+                  
+                  <input type="submit" name="btn-submit"  value="Enviar">
+                  
+              </fieldset>
+                
+            </form>
+        </div>  
+          
+    </body>
+    
+</html>

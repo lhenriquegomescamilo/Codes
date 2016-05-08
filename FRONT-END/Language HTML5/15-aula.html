@@ -1,0 +1,58 @@
+<!-- Aula 15: Formulários Parte 2 - Input Types: Email, Radio, Checkbox -->
+
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title>Aula 15 </title>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Aula 15: Formulários parte 3">
+        <meta name="keywords" content="HTML5, Form">
+        <meta name="author" content="Maikon">
+        <meta http-equiv="refresh" content="10">
+    </head>
+    
+    <body>
+        
+        <div>
+            <h1> Aula 15: Formulários Parte 3 </h1>
+            
+            <!-- pagina.php não existe -->
+            <form action="pagina.php" method="POST">
+              
+              <fieldset>
+                  <legend><h4>Informações Pessoais</h4></legend>
+                  
+                  <!-- Deixando nome obrigatorio: required
+                       Maxlength - Define tamanho maximo do campo -->
+                  Nome: 
+                        <input type="text" name="nome" value="campo nome" required maxlength="50"><br/><br/>
+                  
+                  <!-- Focando o campo senha assim que carregar a pagina: autofocus -->
+                  Senha: 
+                        <input type="password" name="senha" value="campo senha" required autofocus maxlength="8"><br/><br/>
+                  
+                  <!-- Desabilitando campo: disabled -->
+                  E-mail: 
+                        <input type="email" name="email" value="camp@email.com" disabled><br/><br/>
+                  
+                  <!-- Atributo checked determina valor padrão -->
+                  Escolha 1: 
+                        <input type="radio" name="radio" value="Radio 1" checked> Radio 1 
+                        <input type="radio" name="radio" value="Radio 2"> Radio 2 <br/><br/>
+                  
+                  Escolha Vários:       
+                        <input type="checkbox" name="checkbox" value="checkbox1" checked> checkbox1 
+                        <input type="checkbox" name="checkbox" value="checkbox2"> checkbox2 
+                        <input type="checkbox" name="checkbox" value="checkbox3" checked> checkbox3 <br/><br/>
+                  
+                  <input type="submit" name="btn-submit"  value="Enviar"><br/>
+                  
+              </fieldset>
+                
+            </form>
+        </div>  
+          
+    </body>
+    
+</html>
