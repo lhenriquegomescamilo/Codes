@@ -62,9 +62,9 @@ void mostraVetor(const char *string){
 }
 
 int main(){
-    char *nome = busca_informacao("04900092126", "cpf");
+    char *nome = busca_informacao("026", "cpf");
 
-    registra_informacao("04900092126", "cpf", "Maikon"); //funciona
+    registra_informacao("026", "cpf", "Maikon"); //funciona
     printf("\nBuscar Informacao: %s", nome);
     printf("\nStrings: %d\n", comparaStrings("Maikon", "Maikon"));
 
