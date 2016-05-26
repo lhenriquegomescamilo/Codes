@@ -2,7 +2,7 @@
 @author: Maikon Canuto
 @param: char, int
 @version: 1
-@description: Código para mudar da string no terminal CMD.
+@description: CÃ³digo para mudar da string no terminal CMD.
 */
 
 #include <windows.h>
@@ -12,7 +12,7 @@
 @description: Mudando cor da string
 @param: char *string -> Frase desejada, int color -> numero da cor
 */
-void setColorFont(char *string, int color)
+void setColorFont(const char *string, const unsigned int color)
 {
     //Define padroes para trocar a cor
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -24,8 +24,8 @@ void setColorFont(char *string, int color)
     printf("%s", string);
 
     //Define a cor original do terminal
-    const int color1 = 7;
-    SetConsoleTextAttribute(console, color1);
+    const unsigned int colorPadrao = 7;
+    SetConsoleTextAttribute(console, colorPadrao);
 }
 
 
