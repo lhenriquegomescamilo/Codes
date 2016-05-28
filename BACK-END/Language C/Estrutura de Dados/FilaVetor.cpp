@@ -43,7 +43,7 @@ Fila* aloca(){
 @param: Fila(ponteiro), int
 @return: void
 */
-void enqueue(Fila *fila, int valor){
+void enqueue(const Fila *fila, const int valor){
     if(fila->quantidade != TAMANHO){
         int fim = (fila->inicio + fila->quantidade)%TAMANHO;
         fila->vetor[fim] = valor;
@@ -57,7 +57,7 @@ void enqueue(Fila *fila, int valor){
 @return: int
 */
 
-int dequeue(Fila *fila){
+int dequeue(const Fila *fila){
     if(fila->quantidade != 0){
         int valor = fila->vetor[fila->inicio];
         fila->inicio = (fila->inicio + 1)%TAMANHO;
@@ -72,7 +72,7 @@ int dequeue(Fila *fila){
 @param: Fila(ponteiro)
 @return: void
 */
-void mostrarFila(Fila *fila){
+void mostrarFila(const Fila *fila){
     if(fila->quantidade != 0){
         for(int i = 0; i < fila->quantidade; i++){
             printf("%5d", fila->vetor[i]);
