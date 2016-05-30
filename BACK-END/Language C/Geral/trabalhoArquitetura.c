@@ -4,47 +4,63 @@
 #include <stdlib.h>
 #include <string.h>
  
-#define MIBYTES 1048576
-#define KIBYTES 1024
+#define MIBYTES 1048576 //Determina tamanho do MIBYTES
+#define KIBYTES 1024 //Determina tamanho do KIBYTES
  
+//Funcao para elevar o numero 
+//utilizado short unsigned int, para o consume de memoria ser reduzido, e utilizado const para melhor seguranca do codigo
 int elev(const unsigned int expoente, const short unsigned int base){
+        //Utilizado register para identificar quais variaveis ficaram no registrador.
+        //Utilizado unsigned para identificar varaiveis que nao vao ter "lado" negativo, aumentando o aproveitamento da memoria
         register unsigned int i = 0, resultado = 1;
- 
+        
+        //Expoente negativo ou base negativa, retorna 0 como valor
         if(expoente < 0 && base < 0)
                 return 0;
- 
+                
+        //Expoente igual a 0 entao retorna 1, 2^0 = 1
         if(expoente == 0)
                 return 1;
- 
+                
+        //Eleva o numero
         while(i < expoente){
                 resultado *= base;
                 i++;
         }
- 
+        
+        //Retorna o resultado do numero elevado
         return resultado;
 }
- 
+
+//Funcao que simula alocao de memoria
+//utilizado unsigned int, para o consume de memoria ser reduzido, e utilizado const para melhor seguranca do codigo
 int alocaMemoria(const unsigned int mem){
+        //Utilizado register para identificar quais variaveis ficaram no registrador.
+        //Utilizado unsigned para identificar varaiveis que nao vao ter "lado" negativo, aumentando o aproveitamento da memoria
         register unsigned int i = 0, resultado = 0, aux = 0;
- 
+        
+        //memoria for menor negativa, entao retorna 0 
         if(mem < 0)
                 return 0;
- 
+        //memoria for igual a 0 entao retorna 0 
         if(mem == 0)
                 return 0;
- 
+        
+        //Determina tamanho da memoria alocada, de acordo com as possibilidades em BITS. Valor aproximado ao digitado
         for(i = 0; i < mem; i++){
                 resultado = elev(i, 2);
  
                 if(resultado <= mem)
                         aux = resultado;
                 else
-                        break;          
+                        break; //Se entrar aqui é por que já achou o valor
         }
- 
-        return aux;
+  
+        return aux; //Retorna o valor da memoria alocada
 }
  
+//Acha o indice da memoria 
+//utilizado unsigned int, para o consume de memoria ser reduzido, e utilizado const para melhor seguranca do codigo
 int acharIndice(const unsigned int mem, const unsigned int bytes){
         register unsigned int i = 0, aux = 0;
  
@@ -58,17 +74,21 @@ int acharIndice(const unsigned int mem, const unsigned int bytes){
  
     return aux;
 }
- 
+
+//Determina a linhas 
+//utilizado  unsigned int, para o consume de memoria ser reduzido, e utilizado const para melhor seguranca do codigo
 int acharLinhas(const unsigned int mem, const unsigned int bloco){
     return mem/bloco;
 }
- 
-void hexaParaBinario(int hexa, int endereco){
-    int i, resultado = hexa, binario[endereco ];
+
+//Converte Hexadecimal para binario 
+
+void hexaParaBinario(const unsigned int hexa, const unsigned int endereco){
+    unsigned int i, resultado = hexa, binario[endereco];
    
     for(i = 0; resultado != 0; i++){
         binario[i] = resultado % 2;
-        resultado = (resultado - binario[i])/2;
+        resultado -= binario[i]/2;
     }
    
     printf("\n\t\tENDERECO MP CONSIDERADO: %x =  ", hexa);
@@ -79,6 +99,7 @@ void hexaParaBinario(int hexa, int endereco){
     printf("\n\t\t");
 }
  
+Chama funcao principal
 int main(){
        unsigned  int mp = 0,
              mc = 0,
