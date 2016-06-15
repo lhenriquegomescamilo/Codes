@@ -24,15 +24,11 @@ public class Estrutura extends JFrame{
     
 
     //Inicializa atributos da classe
-    private JLabel LabelNome = new JLabel("Nome: "), 
-                   LabelMatricula = new JLabel("Matricula: ");
+    private JLabel LabelNome = new JLabel("Nome: "), LabelMatricula = new JLabel("Matricula: ");
 
-    private JButton ButtonConfirmar = new JButton("Cadastrar"),
-                    ButtonPesquisar = new JButton("Pesquisar"),
-                    ButtonCancelar  = new JButton("Sair");
+    private JButton ButtonConfirmar = new JButton("Cadastrar"), ButtonPesquisar = new JButton("Pesquisar"), ButtonCancelar  = new JButton("Sair");
     
-    private JTextField TextNome = new JTextField(),
-                       TextMatricula = new JTextField();
+    private JTextField TextNome = new JTextField(), TextMatricula = new JTextField();
     
     private ArrayList<Aluno> listaAlunos = new ArrayList<>();
     
@@ -43,7 +39,7 @@ public class Estrutura extends JFrame{
     
     //Chama todos os outros metodos para incializar Frame
     private void inicializa(){
-        initComponent();
+        initComponent(); 
         initEventos();
         addAll();
         initFrame();
@@ -51,18 +47,19 @@ public class Estrutura extends JFrame{
     
     //Metodo para configurar a inicializacao da JFrame
     private void initFrame(){
-        setTitle("Cadastrando Alunos");
-        setSize(350, 205);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(Estrutura.EXIT_ON_CLOSE);
-        setLayout(null);
-        setResizable(false);
-        setVisible(true);
+        setTitle("Cadastrando Alunos"); //Configura o titulo da Frame
+        setSize(350, 205); //Configura o tamanho do Frame
+        setLocationRelativeTo(null); //Configura o Frame para iniciar no meio da Tela
+        setDefaultCloseOperation(Estrutura.EXIT_ON_CLOSE); //Determina comando de Fechar Janela
+        setLayout(null); //Layout(NULL), por que utilizei setBounds. Mas pode utilizar outros GridLayout, FlowLayout...
+        setResizable(false); //Configura para não mudar o tamanho da Janela
+        setVisible(true); //Mostra a Janela na tela
     }
     
     //Metodo para configurar localizacao e tamanho do componentes
     private void initComponent(){
-        LabelNome.setBounds(5, 10, 39, 25);
+        //SetBounds utilizado para determinar onde cada elemento vai ficar no Frame
+        LabelNome.setBounds(5, 10, 39, 25); 
         TextNome.setBounds(50, 10, 280, 25);
         LabelMatricula.setBounds(5, 50, 59, 25);
         TextMatricula.setBounds(70, 50, 260, 25);
@@ -75,12 +72,14 @@ public class Estrutura extends JFrame{
         //Metodo para cadastrar a informacao
         ButtonConfirmar.addActionListener(e -> {
             try{
+                //Verifica se o nome é vazio, se não for pega as informações e adiciona no ArrayList
                 if(!(TextNome.getText().trim().equals(""))){
                     listaAlunos.add(new Aluno(TextNome.getText(), Integer.parseInt(TextMatricula.getText())));
                     
                     JOptionPane.showMessageDialog(rootPane, "Você cadastrou: " + TextNome.getText());
                     
-                    TextNome.setText(null);
+                    //Depois de cadastrar as informações zera os campos.
+                    TextNome.setText(null); 
                     TextMatricula.setText(null);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Digite o nome!");
@@ -98,6 +97,7 @@ public class Estrutura extends JFrame{
     
     //Metodo para adicionar os componentes na JFrame
     private void addAll(){
+        //add(Component), adiciona o componente na Frame
         add(LabelNome);
         add(TextNome);
         add(LabelMatricula);
