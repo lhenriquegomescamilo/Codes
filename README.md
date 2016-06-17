@@ -1,2 +1,4 @@
-# Codes
-Codes of Study
+#Códigos / Codes 
+
+- Códigos desenvolvidos para fins de estudo. 
+- Principais Linguagens: C - Ansi, Java.
