@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public final class FrameEuclides extends JFrame {
+    
     public static final class Euclides{
         private Integer resto;
         private List<Integer> listaRestos = new ArrayList<>();
@@ -17,7 +18,7 @@ public final class FrameEuclides extends JFrame {
         private List<Integer> listaDividendo = new ArrayList<>();
         private List<Integer> listaResultado = new ArrayList<>();
 
-        public final Integer divisaoEuclides(Integer dividendo, Integer divisor) throws Exception{
+        public Integer divisaoEuclides(Integer dividendo, Integer divisor) throws Exception{
             this.resto = 1;
 
             while(this.resto != 0){
@@ -32,19 +33,19 @@ public final class FrameEuclides extends JFrame {
             return dividendo;
         }
 
-        public final List<Integer> getListaRestos(){
+        public List<Integer> getListaRestos(){
             return this.listaRestos;
         }
 
-        public final List<Integer> getListaDivisores(){
+        public List<Integer> getListaDivisores(){
             return this.listaDivisor;
         }
 
-        public final List<Integer> getListaDividendo(){
+        public List<Integer> getListaDividendo(){
             return this.listaDividendo;
         }
 
-        public final List<Integer> getListaResultado(){
+        public List<Integer> getListaResultado(){
             return this.listaResultado;
         }
     }
