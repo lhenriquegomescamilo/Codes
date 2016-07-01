@@ -37,10 +37,12 @@ public class Produto {
 	public Long getCodigo() {
 		return codigo;
 	}
-
+	
+	/*
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+	*/
 
 	public String getDescricao() {
 		return descricao;
@@ -72,6 +74,15 @@ public class Produto {
 
 	public void setFabricante(Fabricante fabricante) {
 		this.fabricante = fabricante;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [codigo = " + getCodigo() 
+				+ ", descricao = " + getDescricao() 
+				+ ", preco = " + getPreco() 
+				+ ", quantidade = " + getQuantidade()
+				+ ", fabricante = " + getFabricante() + "]";
 	}
 	
 	

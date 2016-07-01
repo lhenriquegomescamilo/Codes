@@ -40,9 +40,11 @@ public class Venda {
 		return codigo;
 	}
 
+	/*
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+	*/
 
 	public Date getHorario() {
 		return horario;
@@ -66,6 +68,14 @@ public class Venda {
 
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [codigo = " + getCodigo() 
+				+ ", horario = " + getHorario() 
+				+ ", valor_total = " + getValor_total() 
+				+ ", funcionario = "+ getFuncionario() + "]";
 	}
 	
 	

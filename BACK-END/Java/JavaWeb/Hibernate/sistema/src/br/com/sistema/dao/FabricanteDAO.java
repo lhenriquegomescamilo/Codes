@@ -44,4 +44,19 @@ public class FabricanteDAO {
 			sessao.close();
 		}
 	}
+	
+	public Fabricante buscarPeloID(final Long id){
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Fabricante fabricante = null;
+		
+		try{
+			fabricante = sessao.find(Fabricante.class, id);
+		}catch(Exception e){
+			System.err.println("Falha ao buscar fabricante: " + e.getMessage());
+		}finally{
+			sessao.close();
+		}
+		
+		return fabricante;
+	}
 }

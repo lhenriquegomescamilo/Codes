@@ -22,10 +22,12 @@ public class Fabricante {
 	public Long getCodigo() {
 		return codigo;
 	}
-
-	public void setCodigo(Long codigo) {
+	
+	/*
+	private void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+	*/
 
 	public String getDescricao() {
 		return descricao;
@@ -34,6 +36,11 @@ public class Fabricante {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Fabricante [codigo = " + getCodigo() + ", descricao = " + getDescricao() + "]";
+	}
+
 	
 }

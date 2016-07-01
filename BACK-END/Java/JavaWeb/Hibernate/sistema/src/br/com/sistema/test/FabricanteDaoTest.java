@@ -25,4 +25,11 @@ public class FabricanteDaoTest {
 		FabricanteDAO dao = new FabricanteDAO();
 		dao.removerPeloID(3L);
 	}
+	
+	@Test
+	@Ignore
+	public void buscarPeloIDTest(){
+		FabricanteDAO dao = new FabricanteDAO();
+		System.out.println("\n" + dao.buscarPeloID(3L));;
+	}
 }

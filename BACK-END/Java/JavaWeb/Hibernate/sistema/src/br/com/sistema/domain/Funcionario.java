@@ -30,10 +30,12 @@ public class Funcionario {
 	public Long getCodigo() {
 		return codigo;
 	}
-
+	
+	/*
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+	*/
 
 	public String getNome() {
 		return nome;
@@ -65,6 +67,15 @@ public class Funcionario {
 
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [codigo = " + getCodigo() + ", "
+							+ "nome = " + getNome() 
+							+ ", CPF = " + getCpf() 
+							+ ", senha = " + getSenha() 
+							+ ", funcao =" + getFuncao() + "]";
 	}
 	
 	

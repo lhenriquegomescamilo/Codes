@@ -39,10 +39,12 @@ public class Item {
 	public Long getCodigo() {
 		return codigo;
 	}
-
+	
+	/*
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+	*/
 
 	public Integer getQuantidade() {
 		return quantidade;
@@ -74,6 +76,15 @@ public class Item {
 
 	public void setProduto(Produto produto) {
 		this.produto = produto;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [codigo =" + getCodigo() 
+				+ ", quantidade = " + getQuantidade() 
+				+ ", valor_parcial = " + getValor_parcial()
+				+ ", venda = "+ getVenda() 
+				+ ", produto = " + getProduto() + "]";
 	}
 	
 	
