@@ -1,5 +1,6 @@
 package br.com.sistema.test;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.sistema.dao.FabricanteDAO;
@@ -7,6 +8,7 @@ import br.com.sistema.domain.Fabricante;
 
 public class FabricanteDaoTest {
 	@Test
+	@Ignore
 	public void salvarTest(){
 		Fabricante fabricante = new Fabricante(), fabricante1 = new Fabricante();
 		fabricante.setDescricao("Empresa E");
@@ -15,5 +17,12 @@ public class FabricanteDaoTest {
 		FabricanteDAO dao = new FabricanteDAO();
 		dao.salvar(fabricante);
 		dao.salvar(fabricante1);
+	}
+	
+	@Test
+	@Ignore
+	public void removerTest(){
+		FabricanteDAO dao = new FabricanteDAO();
+		dao.remover(3L);
 	}
 }
