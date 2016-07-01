@@ -23,6 +23,6 @@ public class FabricanteDaoTest {
 	@Ignore
 	public void removerTest(){
 		FabricanteDAO dao = new FabricanteDAO();
-		dao.remover(3L);
+		dao.removerPeloID(3L);
 	}
 }

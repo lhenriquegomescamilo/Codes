@@ -26,7 +26,7 @@ public class FabricanteDAO {
 		}
 	}
 	
-	public void remover(final Long id){
+	public void removerPeloID(final Long id){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 		
