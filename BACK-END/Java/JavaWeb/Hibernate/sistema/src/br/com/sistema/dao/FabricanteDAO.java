@@ -8,73 +8,129 @@ import org.hibernate.Transaction;
 import br.com.sistema.domain.Fabricante;
 import br.com.sistema.util.HibernateUtil;
 
+/**
+ * Classe para operações de persistência para Fabricante. 
+ * 
+ * @author Maikon
+ *
+ */
+
 public class FabricanteDAO {
-	
-	public void salvar(final Fabricante fabricante){
+
+	/**
+	 * Método para salvar um fabricante. 
+	 * 
+	 * @param fabricante
+	 * @return void
+	 */
+	public void salvar(final Fabricante fabricante) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
-		
-		try{
+
+		try {
 			transacao = sessao.beginTransaction();
 			sessao.save(fabricante);
 			transacao.commit();
-		}catch(Exception e){
-			if(transacao != null)
+		} catch (Exception exception) {
+			if (transacao != null)
 				transacao.rollback();
-			
-			System.err.println("Falha ao salvar fabricante: " + e.getMessage());
-		}finally{
+
+			System.err.println("Falha ao salvar fabricante: " + exception.getMessage());
+		} finally {
 			sessao.close();
 		}
 	}
-	
-	public void removerPeloID(final Long id){
+
+	/**
+	 * Método para remover um fabricante pelo ID. 
+	 * 
+	 * @param id
+	 * @return void
+	 */
+	public void removerFabricantePeloID(final Long id) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
-		
-		try{
+
+		try {
 			transacao = sessao.beginTransaction();
-			//sessao.delete(sessao.find(Fabricante.class, id));
 			sessao.delete(sessao.load(Fabricante.class, id));
 			transacao.commit();
-		}catch(Exception e){
-			if(transacao != null)
+		} catch (Exception exception) {
+			if (transacao != null)
 				transacao.rollback();
-			
-			System.err.println("Falha ao deletar fabricante: " + e.getMessage());
-		}finally{
+
+			System.err.println("Falha ao deletar fabricante: " + exception.getMessage());
+		} finally {
 			sessao.close();
 		}
 	}
-	
+
+	/**
+	 * Método para remover o fabricante.
+	 * 
+	 * @param fabricante
+	 * @return void
+	 */
+	public void removerFabricante(final Fabricante fabricante) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.delete(fabricante);
+			transacao.commit();
+		} catch (Exception exception) {
+			if (transacao != null)
+				transacao.rollback();
+
+			System.err.println("Falha ao deletar fabricante: " + exception.getMessage());
+		} finally {
+			sessao.close();
+		}
+	}
+
+	/**
+	 * Método para listar todos os fabricantes. 
+	 * 
+	 * @param void
+	 * @return List<Fabricante>
+	 * @throws Exception
+	 */
 	@SuppressWarnings("unchecked")
-	public List<Fabricante> buscarTodos(){
+	public List<Fabricante> buscarTodos() {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Fabricante> fabricantes = null;
-		
-		try{
+
+		try {
 			fabricantes = sessao.getNamedQuery("Fabricante.listar").getResultList();
-		}catch(Exception e){
-			
-		}finally{
+		} catch (Exception exception) {
+			throw exception;
+		} finally {
 			sessao.close();
 		}
-		
+
 		return fabricantes;
 	}
+
 	
-	public Fabricante buscarPeloID(final Long id){
+	/**
+	 * Método para buscar fabricante pelo ID.
+	 * 
+	 * @param id
+	 * @return fabricante
+	 */
+	public Fabricante buscarPeloID(final Long id) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Fabricante fabricante = null;
-		
-		try{
+
+		try {
 			fabricante = sessao.find(Fabricante.class, id);
-		}catch(Exception e){
-			System.err.println("Falha ao buscar fabricante: " + e.getMessage());
-		}finally{
+		} catch (Exception exception) {
+			System.err.println("Falha ao buscar fabricante: " + exception.getMessage());
+		} finally {
 			sessao.close();
 		}
-		
+
 		return fabricante;
 	}
 }
