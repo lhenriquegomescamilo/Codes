@@ -126,7 +126,7 @@ public class FuncionarioDAO {
 		List<Funcionario> funcionarios = null;
 		
 		try{
-			funcionarios = sessao.getNamedQuery("Funcionario.listar").getResultList();
+			funcionarios = sessao.createQuery("SELECT funcionario FROM Funcionario funcionario").getResultList();
 		}catch(Exception exception){
 			throw exception;
 		}finally{

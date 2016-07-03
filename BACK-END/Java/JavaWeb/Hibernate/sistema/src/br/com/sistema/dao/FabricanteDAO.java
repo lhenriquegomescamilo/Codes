@@ -102,7 +102,7 @@ public class FabricanteDAO {
 		List<Fabricante> fabricantes = null;
 
 		try {
-			fabricantes = sessao.getNamedQuery("Fabricante.listar").getResultList();
+			fabricantes = sessao.createQuery("SELECT fabricante FROM Fabricante fabricante").getResultList();
 		} catch (Exception exception) {
 			throw exception;
 		} finally {
