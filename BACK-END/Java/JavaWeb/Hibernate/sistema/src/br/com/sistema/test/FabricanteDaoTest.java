@@ -1,5 +1,7 @@
 package br.com.sistema.test;
 
+import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -7,6 +9,7 @@ import br.com.sistema.dao.FabricanteDAO;
 import br.com.sistema.domain.Fabricante;
 
 public class FabricanteDaoTest {
+	
 	@Test
 	@Ignore
 	public void salvarTest(){
@@ -21,7 +24,7 @@ public class FabricanteDaoTest {
 	
 	@Test
 	@Ignore
-	public void removerTest(){
+	public void removerPeloIDTest(){
 		FabricanteDAO dao = new FabricanteDAO();
 		dao.removerPeloID(3L);
 	}
@@ -31,5 +34,14 @@ public class FabricanteDaoTest {
 	public void buscarPeloIDTest(){
 		FabricanteDAO dao = new FabricanteDAO();
 		System.out.println("\n" + dao.buscarPeloID(3L));;
+	}
+	
+	@Test
+	@Ignore
+	public void buscarTodosTest(){
+		FabricanteDAO dao = new FabricanteDAO();
+		List<Fabricante> fabricantes = dao.buscarTodos();
+		
+		fabricantes.stream().forEach(f -> System.out.println(f));
 	}
 }

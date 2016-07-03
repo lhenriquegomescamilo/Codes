@@ -1,5 +1,7 @@
 package br.com.sistema.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -43,6 +45,22 @@ public class FabricanteDAO {
 		}finally{
 			sessao.close();
 		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Fabricante> buscarTodos(){
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		List<Fabricante> fabricantes = null;
+		
+		try{
+			fabricantes = sessao.getNamedQuery("Fabricante.listar").getResultList();
+		}catch(Exception e){
+			
+		}finally{
+			sessao.close();
+		}
+		
+		return fabricantes;
 	}
 	
 	public Fabricante buscarPeloID(final Long id){
