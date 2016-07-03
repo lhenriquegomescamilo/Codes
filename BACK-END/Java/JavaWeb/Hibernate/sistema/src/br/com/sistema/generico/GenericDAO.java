@@ -156,13 +156,13 @@ public class GenericDAO <T, I extends Serializable> {
 		List<T> listObject = null;
 		
 		try{
-			CriteriaBuilder criteria = session.getCriteriaBuilder();
-			CriteriaQuery<T> query = criteria.createQuery(entityClass);
+			CriteriaBuilder c = session.getCriteriaBuilder();
+			CriteriaQuery<T> query = c.createQuery(entityClass);
 			query.from(entityClass);
 			listObject = session.createQuery(query).getResultList();
 			
 		}catch(Exception exception){
-			throw exception;
+			
 		}finally{
 			session.close();
 		}

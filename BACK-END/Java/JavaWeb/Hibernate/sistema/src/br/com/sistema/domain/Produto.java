@@ -32,7 +32,7 @@ public class Produto {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tbl_fabricantes_fab_codigo", foreignKey = @ForeignKey(name = "fab_codigo"), nullable = false)
-	private Fabricante fabricante;
+	private Manufacturer fabricante;
 
 	public Long getCodigo() {
 		return codigo;
@@ -68,11 +68,11 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public Fabricante getFabricante() {
+	public Manufacturer getFabricante() {
 		return fabricante;
 	}
 
-	public void setFabricante(Fabricante fabricante) {
+	public void setFabricante(Manufacturer fabricante) {
 		this.fabricante = fabricante;
 	}
 

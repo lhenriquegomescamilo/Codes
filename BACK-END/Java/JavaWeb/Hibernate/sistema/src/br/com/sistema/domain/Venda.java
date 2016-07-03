@@ -34,7 +34,7 @@ public class Venda {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tbl_funcionario_fun_codigo", foreignKey = @ForeignKey(name = "fun_codigo"), nullable = false)
-	private Funcionario funcionario;
+	private Employee funcionario;
 
 	public Long getCodigo() {
 		return codigo;
@@ -62,11 +62,11 @@ public class Venda {
 		this.valor_total = valor_total;
 	}
 
-	public Funcionario getFuncionario() {
+	public Employee getFuncionario() {
 		return funcionario;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
+	public void setFuncionario(Employee funcionario) {
 		this.funcionario = funcionario;
 	}
 
