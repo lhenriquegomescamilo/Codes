@@ -133,4 +133,28 @@ public class FabricanteDAO {
 
 		return fabricante;
 	}
+	
+	/**
+	 * Método para atualizar/editar Fabricante 
+	 * 
+	 * @param fabricante
+	 * @return void
+	 */
+	public void atualizarFabricante(final Fabricante fabricante){
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+		
+		try{
+			transacao = sessao.beginTransaction();
+			sessao.update(fabricante);
+			transacao.commit();
+		}catch(Exception exception){
+			if(transacao != null)
+				transacao.rollback();
+			
+			System.err.println("Falha ao atualizar Fabricante: " + exception.getMessage());
+		}finally{
+			sessao.close();
+		}
+	}
 }

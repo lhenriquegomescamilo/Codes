@@ -22,6 +22,20 @@ public class Fabricante{
 	@Column(name = "fab_descricao", length = 50, nullable = false)
 	private String descricao;
 
+	public Fabricante(){}
+	
+	public Fabricante(String descricao){
+		this.setDescricao(descricao);
+	}
+	
+	public Fabricante(Long id, String descricao){
+		this.setCodigo(id);
+		this.setDescricao(descricao);
+	}
+	
+	public void setCodigo(Long codigo){
+		this.codigo = codigo;
+	}
 	public Long getCodigo() {
 		return codigo;
 	}

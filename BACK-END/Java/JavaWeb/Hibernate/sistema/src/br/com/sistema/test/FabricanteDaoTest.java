@@ -39,4 +39,16 @@ public class FabricanteDaoTest {
 	public void buscarTodosTest(){	
 		new FabricanteDAO().buscarTodos().stream().forEach(f -> System.out.println(f));
 	}
+	
+	@Test
+	@Ignore
+	public void atualizarFabricanteTest(){
+		FabricanteDAO dao = new FabricanteDAO();
+		
+		Fabricante fabricante = new Fabricante();
+		fabricante.setCodigo(3L);
+		fabricante.setDescricao("EMPRESA A");
+		
+		dao.atualizarFabricante(fabricante);
+	}
 }
