@@ -1,4 +1,4 @@
-#Sistema
+#System
 
 - Hibernate 5.2.0
 - JUnit 4.12 

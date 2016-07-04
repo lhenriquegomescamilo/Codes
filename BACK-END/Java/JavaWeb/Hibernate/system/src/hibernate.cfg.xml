@@ -22,9 +22,14 @@
 		<property name="hbm2ddl.auto">validate</property>
 	
 		<mapping class="br.com.sistema.domain.Manufacturer"/>
+		
 		<mapping class="br.com.sistema.domain.Employee"/>
-		<mapping class="br.com.sistema.domain.Produto"/>
-		<mapping class="br.com.sistema.domain.Venda"/>
+		
+		<mapping class="br.com.sistema.domain.Product"/>
+		
+		<mapping class="br.com.sistema.domain.Sale"/>
+		
 		<mapping class="br.com.sistema.domain.Item"/>
+		
 	</session-factory>
 </hibernate-configuration>
