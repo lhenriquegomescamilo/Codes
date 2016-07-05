@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Sistema de gerenciamento</title>
+	</h:head>
+
+	<h:body>
+		<div class="template">
+			<p:layout fullPage="true">
+			
+				<p:layoutUnit position="north" header="Sistema de gerenciamento" resizable="false" closable="false" collapsible="false"/>
+				
+				<p:layoutUnit position="south" header="Sistema desenvolvido por Maikon"  resizable="false" closable="false" collapsible="false"/>
+				
+				<p:layoutUnit position="west"  header="Menu" size="250" resizable="false" closable="false" collapsible="false">
+					
+					<h:form>
+						<p:panelMenu>
+						
+							<p:submenu label="Principal">
+								<p:menuitem value="Principal" outcome="/pages/principal.xhtml"/>
+								<p:menuitem value="Sair" />
+							</p:submenu>
+							
+							<p:submenu label="Cadastros">
+								<p:menuitem value="Fabricante" />
+								<p:menuitem value="Produtos" />
+								<p:menuitem value="Funcionários" />	
+							</p:submenu>
+							
+							<p:submenu label="Vendas">
+							
+							</p:submenu>
+						</p:panelMenu>
+					</h:form>
+					
+				</p:layoutUnit>
+				
+				<p:layoutUnit position="center">
+					<ui:insert name="content" />
+				</p:layoutUnit>
+				
+			</p:layout>
+		</div>
+	</h:body>
+
+</html>

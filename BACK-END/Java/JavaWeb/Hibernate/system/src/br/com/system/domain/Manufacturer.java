@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_fabricantes")
-
 public class Manufacturer{
 
 	@Id

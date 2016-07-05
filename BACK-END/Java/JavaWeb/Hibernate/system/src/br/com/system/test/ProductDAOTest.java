@@ -57,7 +57,6 @@ public class ProductDAOTest {
 	}
 	
 	@Test
-	@Ignore
 	public void searchProduct(){
 		GenericDAO<Product, Long> dao = new GenericDAO<>(Product.class);
 		System.out.println(dao.search(37L));
