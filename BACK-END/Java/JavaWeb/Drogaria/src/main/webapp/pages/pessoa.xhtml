@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Drogaria</title>
+	</h:head>
+
+	<h:body>
+		<div id="principal">
+			<div class="painel">
+				<h:form>
+					<p:panel header="Pessoa - Listagem">
+						<p:dataTable paginator="true" emptyMessage="Não foram encontrados registros.">
+							<f:facet name="header">
+								<p:commandButton value="Novo" oncomplete="PF('dialogPessoa').show();"/>
+							</f:facet>
+							
+							<p:column headerText="Nome">
+							</p:column>
+							
+							<p:column headerText="CPF">
+							</p:column>
+							
+							<p:column headerText="RG">
+							</p:column>
+							
+							<p:column headerText="RUA">
+							</p:column>
+							
+							<p:column headerText="NÚMERO">
+							</p:column>
+							
+							<p:column headerText="BAIRRO">
+							</p:column>
+							
+							<p:column headerText="CEP">
+							</p:column>
+							
+							<p:column headerText="COMPLEMENTO">
+							</p:column>
+							
+							<p:column headerText="TELEFONE">
+							</p:column>
+							
+							<p:column headerText="CELULAR">
+							</p:column>
+							
+							<p:column headerText="E-MAIL">
+							</p:column>
+							
+							<p:column headerText="CIDADE">
+							</p:column>
+							
+						</p:dataTable>
+					</p:panel>
+				</h:form>
+			</div>
+		</div> <!-- principal -->
+	</h:body>
+</html>

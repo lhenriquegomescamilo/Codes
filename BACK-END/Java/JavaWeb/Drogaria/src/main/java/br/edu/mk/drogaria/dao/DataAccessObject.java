@@ -77,6 +77,30 @@ public class DataAccessObject <T, I extends Serializable> {
 	}
 	
 	/**
+	 * Method for merge Object
+	 * 
+	 * @param object
+	 * @return void
+	 */
+	public void merge(T object){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		
+		try{
+			transaction = session.beginTransaction();
+			session.merge(object);
+			transaction.commit();
+		}catch(Exception exception){
+			if(transaction != null)
+				transaction.rollback();
+			
+			throw exception;
+		}finally{
+			session.close();
+		}
+	}
+	
+	/**
 	 * Method for delete object 
 	 * 
 	 * @param object

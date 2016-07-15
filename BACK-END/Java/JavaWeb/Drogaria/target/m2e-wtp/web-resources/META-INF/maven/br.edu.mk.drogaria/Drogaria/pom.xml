@@ -1,5 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<!-- Informações do projeto -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.edu.mk.drogaria</groupId>
 	<artifactId>Drogaria</artifactId>
@@ -14,11 +16,13 @@
 
 	<!-- Parâmetros de execução -->
 	<build>
+	
 		<!-- Nome do projeto empacotado -->
 		<finalName>Drogaria</finalName>
 
 		<!-- Plugins -->
 		<plugins>
+		
 			<!-- Compilador -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -29,25 +33,27 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 
 
 	<dependencies>
+	
+		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.1.Final</version>
 		</dependency>
 
-		<!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.2.1.Final</version>
 		</dependency>
 
-
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -55,21 +61,21 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.39</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+		<!-- PrimeFaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>6.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.faces/javax.faces-api -->
+		<!-- JSF -->
 		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
@@ -80,6 +86,13 @@
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.12</version>
+		</dependency>
+
+		<!-- OmniFaces -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>1.14</version>
 		</dependency>
 
 	</dependencies>

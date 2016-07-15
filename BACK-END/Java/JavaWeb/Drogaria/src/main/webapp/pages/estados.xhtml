@@ -8,24 +8,29 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Drogaria</title>
-	<link rel="stylesheet" type="text/css" href="css/theme.css" /> 
+	<title>Drogaria: Estados</title>
 </h:head>
 
 <h:body>
-
+	
+	<!-- Caixa de dialogo para informações: Erro, Fatal ou info -->
+	<p:growl id="mensagem" />
+	
+	<!-- div master -->
 	<div id="principal">
 		<div class="painel">
 			<!-- Painel para Listagem dos Estados -->
 			<h:form>
 				<p:panel header="Estado - Listagem">
-					<p:dataTable emptyMessage="Não existe registros" paginator="true">
-
+					<p:dataTable emptyMessage="Não foram encontrados registros." paginator="true">
+						
+						<!-- Coloca um botão no header da dataTable -->
 						<f:facet name="header">
 							<p:commandButton value="Novo"
 								oncomplete="PF('dialogEstados').show();" />
 						</f:facet>
-
+						
+						<!-- Colunas da tabela -->
 						<p:column headerText="Nome">
 						</p:column>
 
@@ -50,6 +55,8 @@
 				<p:dialog header="Estados - Cadastro" widgetVar="dialogEstados" draggable="false" resizable="false" modal="true">
 
 					<h:form>
+					
+						<!-- PanelGrid para inputs e outputs -->
 						<h:panelGrid columns="2">
 							<p:outputLabel value="Nome: " />
 							<p:inputText maxlength="50" size="15" required="true" placeholder="Nome do estado"/>
@@ -58,8 +65,9 @@
 							<p:inputText maxlength="2" size="15" required="true" placeholder="Sigla do Estado"/>
 						</h:panelGrid>
 						
+						<!-- PanelGrid para os botões -->
 						<h:panelGrid columns="2">
-							<p:commandButton value="Salvar" />
+							<p:commandButton value="Salvar" actionListener="#{estadoBean.salvar()}" update=":mensagem"/>
 							<p:commandButton value="Cancelar" oncomplete="PF('dialogEstados').hide();"/>
 						</h:panelGrid>
 					</h:form>
