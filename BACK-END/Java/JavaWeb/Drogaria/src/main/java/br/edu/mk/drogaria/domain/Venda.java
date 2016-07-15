@@ -5,14 +5,21 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Venda extends PrimaryKeyGeneric{
-
+public class Venda{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long primaryKey;
+	
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date horario;
@@ -57,6 +64,20 @@ public class Venda extends PrimaryKeyGeneric{
 
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+	
+	public Long getPrimaryKey() {
+		return primaryKey;
+	}
+	
+	public void setPrimaryKey(Long primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [primaryKey=" + primaryKey + ", horario=" + horario + ", valorTotal=" + valorTotal + ", cliente="
+				+ cliente + ", funcionario=" + funcionario + "]";
 	}
 	
 	

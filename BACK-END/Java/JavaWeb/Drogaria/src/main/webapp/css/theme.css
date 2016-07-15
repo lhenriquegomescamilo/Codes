@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+*{
+	padding: 0px;
+	margin: 0px;
+	font-size: 12px;
+	text-align: center;
+}
+
+ui-panel{
+	text-align: center;
+	font-size: 13px;
+}

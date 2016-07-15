@@ -4,12 +4,19 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ItemVenda extends PrimaryKeyGeneric{
+public class ItemVenda{
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long primaryKey;
+	
 	@Column(nullable = false)
 	private Short quantidade;
 	
@@ -55,6 +62,18 @@ public class ItemVenda extends PrimaryKeyGeneric{
 		this.funcionario = funcionario;
 	}
 	
+	public Long getPrimaryKey() {
+		return primaryKey;
+	}
 	
-	
+	public void setPrimaryKey(Long primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemVenda [primaryKey=" + primaryKey + ", quantidade=" + quantidade + ", valorParcial=" + valorParcial
+				+ ", produto=" + produto + ", funcionario=" + funcionario + "]";
+	}
+
 }

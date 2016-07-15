@@ -2,12 +2,19 @@ package br.edu.mk.drogaria.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Pessoa extends PrimaryKeyGeneric {
+public class Pessoa{
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long primaryKey;
+	
 	@Column(nullable = false, length = 50)
 	private String nome;
 
@@ -140,5 +147,22 @@ public class Pessoa extends PrimaryKeyGeneric {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+	
+	public Long getPrimaryKey() {
+		return primaryKey;
+	}
+	
+	public void setPrimaryKey(Long primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", rua=" + rua + ", rg=" + rg + ", numero=" + numero
+				+ ", bairro=" + bairro + ", cep=" + cep + ", complemento=" + complemento + ", telefone=" + telefone
+				+ ", celular=" + celular + ", email=" + email + ", cidade=" + cidade + "]";
+	}
+	
+	
 
 }
