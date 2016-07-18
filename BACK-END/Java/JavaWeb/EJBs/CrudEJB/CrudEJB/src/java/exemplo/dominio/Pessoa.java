@@ -15,6 +15,7 @@ public class Pessoa {
     @Column(length = 30, nullable = false)
     private String nome;
     
+    @Column(nullable = false)
     private Integer idade;
 
     public Long getId() {
