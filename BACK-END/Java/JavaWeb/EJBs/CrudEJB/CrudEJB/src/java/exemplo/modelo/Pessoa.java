@@ -19,6 +19,8 @@ public class Pessoa {
     @Column(nullable = false)
     private Integer idade;
 
+    public Pessoa(){}
+    
     public Pessoa(Long id, String nome, Integer idade) {
         this.id = id;
         this.nome = nome;
