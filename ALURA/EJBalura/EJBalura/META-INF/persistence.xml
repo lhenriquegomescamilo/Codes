@@ -13,7 +13,7 @@
 		<properties>
 
 			<!-- Configuracoes da conexao -->
-			<jta-data-source>java:/MysqlDS</jta-data-source>
+			<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
 
 			<!-- Configuracoes especificas do Hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
